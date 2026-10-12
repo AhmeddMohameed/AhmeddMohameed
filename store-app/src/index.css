@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-ai-darker text-ai-text font-sans antialiased overflow-x-hidden;
+    background-image:
+      radial-gradient(circle at 15% 50%, rgba(138, 43, 226, 0.08), transparent 25%),
+      radial-gradient(circle at 85% 30%, rgba(0, 240, 255, 0.08), transparent 25%);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-ai-card/70 backdrop-blur-md border border-ai-primary/20 shadow-lg;
+  }
+
+  .glass-panel-hover {
+    @apply hover:bg-ai-card hover:border-ai-primary/50 hover:shadow-glow-primary transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply px-6 py-2 rounded-lg bg-ai-primary text-ai-darker font-bold shadow-[0_0_10px_rgba(0,240,255,0.7)] hover:shadow-[0_0_20px_rgba(0,240,255,0.9)] hover:scale-105 transition-all duration-300;
+  }
+
+  .btn-outline {
+    @apply px-6 py-2 rounded-lg border border-ai-primary text-ai-primary font-bold hover:bg-ai-primary/10 hover:shadow-glow-primary transition-all duration-300;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-ai-darker;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-ai-primary/50 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-ai-primary;
+}
